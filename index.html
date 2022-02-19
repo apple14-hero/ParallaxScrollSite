@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>PARALLAX WEBSITE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@500&family=Righteous&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+  <header>
+    <a class="logo" href="#">LOGO</a>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Contact</a></li>
+      <li><a href="#">About</a></li>
+      <li><a id="btn" href="#">Explore</a></li>
+    </ul>
+  </header>
+
+  <section>
+    <h2 id="txt">Beautiful<span>Adventure</span></h2>
+    <img class="land image" src="77.jpg" alt="landscape" id="land" />
+    <img class="ballon image" src="ballon.png" alt="" id="ballon" />
+    <img class="car image" src="car.png" alt="car" id="car" />
+  </section>
+
+  <div class="content">
+    <h2 class="cont reveal">WHAT IS LANDSCAPE ?</h2>
+    <p class="cont reveal">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eveniet voluptates consequuntur eligendi est, quia iusto, eaque alias excepturi labore assumenda consectetur omnis aperiam quaerat quisquam nihil! Eum molestiae eius, porro
+      provident dolorem quisquam exercitationem cum odit. Voluptate deleniti architecto repellat, sed?
+      <br><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere cumque facilis assumenda molestiae nulla, autem et laboriosam nemo explicabo eaque, aut! Facere soluta dolorum consectetur earum saepe impedit. Impedit laudantium
+      cupiditate, saepe repellat nulla itaque quibusdam provident quaerat, magnam, sit tempore atque unde.<br>
+      <br><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore consequuntur est officia sint temporibus, error unde ullam placeat, et iusto voluptatibus labore rerum doloremque quidem nesciunt nisi esse illum totam voluptatum
+      laboriosam ut repellendus. Dolore non labore cum doloribus iusto. Ducimus, ex. Accusamus, minima.
+      <br><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet vel totam excepturi aliquid unde quaerat doloribus eligendi iste similique? Harum quod ducimus accusamus odit iste ipsum non voluptatem, veniam aut reprehenderit eligendi
+      itaque nemo sed nihil voluptate. Numquam in, nemo iusto sit quibusdam nam aspernatur.
+      <br><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt amet enim optio harum culpa consequuntur dolor consequatur, minus quo laudantium? Tenetur aperiam aspernatur nihil, laboriosam quos quasi voluptas sapiente non, hic
+      incidunt accusantium, ipsa, molestiae? Distinctio voluptatibus architecto, omnis illo in iure quam voluptates.
+      <br><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione aliquam, accusamus deserunt quas, modi illo ullam temporibus sequi, quia explicabo eveniet numquam quis voluptate totam aperiam id. Nostrum, officiis corrupti quis
+      voluptate officia dignissimos! Nostrum atque quidem rem nisi amet voluptatibus sapiente illum!
+      <br><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam, totam! Architecto blanditiis illo quam, rerum amet. Nemo molestias, eligendi quo temporibus quam repellat illum assumenda eveniet distinctio quisquam libero, saepe ea in
+      facilis, necessitatibus possimus eius provident voluptatibus quibusdam magni vitae pariatur doloremque maxime.
+
+    </p>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" charset="utf-8"></script>
+  <script type="text/javascript">
+    let text = document.getElementById('txt');
+    let ballon = document.getElementById('ballon');
+    let car = document.getElementById('car');
+    let con = document.querySelectorAll('.cont');
+
+    window.addEventListener('scroll', function() {
+      let scrollVal = window.scrollY;
+
+      text.style.top = -15 + scrollVal * (0.5) + "%";
+      ballon.style.top = 198 + scrollVal * (-0.5) + "px";
+      ballon.style.left = 945 + scrollVal * (1) + "px";
+      car.style.left = -310 + scrollVal * 3.5 + "px";
+
+      if (scrollVal >= 135) {
+        text.style.opacity = 0;
+      } else {
+        text.style.opacity = 1;
+
+      }
+
+      con.forEach((item) => {
+        if (scrollVal >= 280) {
+          console.log(item);
+          item.classList.add('active');
+        }else {
+          item.classList.remove('active');
+        }
+      });
+
+    });
+  </script>
+</body>
+
+</html>
